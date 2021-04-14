@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+            .gridbox-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.flexbox-links {
+    display: flex;
+    direction: ltr;
+    justify-content: center;
+    flex-direction: column;
+}
+        </style>
+
+
+        <link rel="stylesheet" href="/dist/salesmod.css"/>
+        <script type="module" src="/dist/salesmod.esm.js"></script>
+        <script nomodule src="/dist/mod.js"></script>
+    </head>
+    <main>
+        <h1>mod-panel</h1>
+<p>A component that houses cards containing all of the recommended product items. It combines a gallery and an endless panel with options for pagination.</p>
+<h2>Examples</h2>
+<p>This is a sample panel</p>
+<mod-panel data='[1 - F, 2 - F, 3 - F, 4 - F, 5 - S, 6 - S, 7 - S, 8 - S]' theme="autumn" rounded="true" size="large" paginate="true" limit="1">
+</mod-panel>
+<!-- Auto Generated Below -->
+<h2>Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>classes</code></td>
+<td><code>classes</code></td>
+<td>Allows the application of custom classes and CSS on-top of existing styles</td>
+<td><code>string</code></td>
+<td><code>&quot;&quot;</code></td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td><code>data</code></td>
+<td>An array of documents or any other value to display on cards in the Panel</td>
+<td><code>any[] \| string</code></td>
+<td><code>undefined</code></td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td><code>limit</code></td>
+<td>Sets a limit of cards per page</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>paginate</code></td>
+<td><code>paginate</code></td>
+<td>Applies pagination to the data. Defaults to <code>false</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>rounded</code></td>
+<td><code>rounded</code></td>
+<td>Generates rounded cards if set to true, otherwise false</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td><code>size</code></td>
+<td>Selector for mounted card sizes</td>
+<td><code>&quot;large&quot; \| &quot;medium&quot;</code></td>
+<td><code>&quot;medium&quot;</code></td>
+</tr>
+<tr>
+<td><code>theme</code></td>
+<td><code>theme</code></td>
+<td>Theme used to influence the cards within the panel</td>
+<td><code>&quot;abyss&quot; \| &quot;autumn&quot; \| &quot;breeze&quot; \| &quot;minimalist&quot;</code></td>
+<td><code>&quot;minimalist&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Dependencies</h2>
+<h3>Depends on</h3>
+<ul>
+<li><a href="../card">mod-card</a></li>
+</ul>
+<h3>Graph</h3>
+<pre><code class="language-mermaid">graph TD;
+  mod-panel --&gt; mod-card
+  style mod-panel fill:#f9f,stroke:#333,stroke-width:4px
+</code></pre>
+<hr>
+
+        <div class="flexbox-links">
+            <a href="/components/card/readme.html">Card</a>
+            <a href="/components/panel/readme.html">Panel</a>
+        </div>
+    </main>
+</html>

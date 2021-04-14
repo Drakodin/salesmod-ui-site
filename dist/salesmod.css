@@ -1,0 +1,26 @@
+:root {
+  /* Minimalist Theme (default used) */
+  --mod-min-black: #000;
+  --mod-min-dark-gray: #515151;
+  --mod-min-gray: #909090;
+  --mod-min-light-gray: #C5C5C5;
+  --mod-min-white: #FFF;
+  /* Coastal Breeze Theme */
+  --mod-breeze-green: #9DFFE8;
+  --mod-breeze-light-blue: #7CE7FF;
+  --mod-breeze-light-purple: #B7C7FF;
+  --mod-breeze-blue: #69A5FF;
+  --mod-breeze-dark-blue: #2950D8;
+  /* Autumn Beauty Theme */
+  --mod-autumn-red: #FFA99D;
+  --mod-autumn-orange: #F08557;
+  --mod-autumn-yellow-orange: #FFAB48;
+  --mod-autumn-brown: #B05F00;
+  --mod-autumn-gold: #EFDB2A;
+  /* Abyssal Depths Theme */
+  --mod-abyss-blue1: #263E62;
+  --mod-abyss-blue2: #0F0D57;
+  --mod-abyss-indigo: #480081;
+  --mod-abyss-purple: #5A0069;
+  --mod-abyss-dark-purple: #430044;
+}

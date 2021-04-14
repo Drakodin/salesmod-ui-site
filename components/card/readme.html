@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>Card</title>
+        <style>
+            .gridbox-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.flexbox-links {
+    display: flex;
+    direction: ltr;
+    justify-content: center;
+    flex-direction: column;
+}
+        </style>
+
+
+        <link rel="stylesheet" href="/dist/salesmod.css"/>
+        <script type="module" src="/dist/salesmod.esm.js"></script>
+        <script nomodule src="/dist/mod.js"></script>
+    </head>
+    <main>
+        <h1>mod-card</h1>
+<p>These are cards</p>
+<div class="gridbox-4">
+    <mod-card elevation="2" rounded="true"></mod-card>
+    <mod-card elevation="2" rounded="true" theme="breeze"></mod-card>
+    <mod-card elevation="2" rounded="true" theme="abyss"></mod-card>
+    <mod-card elevation="2" rounded="true" theme="autumn"></mod-card>
+</div>
+<!-- Auto Generated Below -->
+<h2>Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>elevation</code></td>
+<td><code>elevation</code></td>
+<td>Elevation value, controls card shadow in gallery</td>
+<td><code>1 \| 2 \| 3 \| 4 \| 5 \| 6</code></td>
+<td><code>undefined</code></td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>--</td>
+<td>Optional prop that accepts images and attempts to render them</td>
+<td><code>{ src: any; alt: string; }</code></td>
+<td><code>undefined</code></td>
+</tr>
+<tr>
+<td><code>rounded</code></td>
+<td><code>rounded</code></td>
+<td>Optional variable to control corners of card</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td><code>size</code></td>
+<td>Optional variable to control the size of the card</td>
+<td><code>&quot;large&quot; \| &quot;medium&quot;</code></td>
+<td><code>&quot;large&quot;</code></td>
+</tr>
+<tr>
+<td><code>theme</code></td>
+<td><code>theme</code></td>
+<td>Theme used to control the color elements of the card</td>
+<td><code>&quot;abyss&quot; \| &quot;autumn&quot; \| &quot;breeze&quot; \| &quot;minimalist&quot;</code></td>
+<td><code>&quot;minimalist&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Shadow Parts</h2>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;description&quot;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&quot;title&quot;</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Dependencies</h2>
+<h3>Used by</h3>
+<ul>
+<li><a href="../panel">mod-panel</a></li>
+</ul>
+<h3>Graph</h3>
+<pre><code class="language-mermaid">graph TD;
+  mod-panel --&gt; mod-card
+  style mod-card fill:#f9f,stroke:#333,stroke-width:4px
+</code></pre>
+<hr>
+
+        <div class="flexbox-links">
+            <a href="/components/card/readme.html">Card</a>
+            <a href="/components/panel/readme.html">Panel</a>
+        </div>
+    </main>
+</html>
