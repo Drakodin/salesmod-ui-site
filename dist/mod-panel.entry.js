@@ -1,4 +1,4 @@
-import { r as registerInstance, h } from './index-6df8c5bb.js';
+import { r as registerInstance, h } from './index-1c4a1879.js';
 
 const panelCss = ".panel{display:grid;grid-template-columns:repeat(auto-fill, minmax(max(180px, 20%), 1fr));column-gap:10px;row-gap:10px}";
 
@@ -20,7 +20,7 @@ const Panel = class {
     this.loadedData = [];
     this.pageNum = 1;
   }
-  componentWillLoad() {
+  componentWillRender() {
     this.dataRender(this.data);
   }
   componentDidUpdate() {
@@ -31,9 +31,15 @@ const Panel = class {
    */
   dataRender(data) {
     if (typeof (data) === "string") {
-      data = data.replace(/(\[|\])/g, '');
-      let d = data.split(', ');
-      this.loadedData = d;
+      try {
+        let d = JSON.parse(data.slice(1, data.length - 1));
+        this.loadedData = d;
+      }
+      catch (e) {
+        data = data.replace(/(\[|\])/g, '');
+        let d = data.split(', ');
+        this.loadedData = d;
+      }
     }
     else {
       this.loadedData = data;
@@ -41,10 +47,18 @@ const Panel = class {
   }
   makePagination(pages, limit) {
     if (pages) {
-      return this.loadedData.slice((this.pageNum - 1) * limit, this.pageNum * limit).map((v, i) => (h("mod-card", { key: `${v}-${i}`, theme: this.theme, elevation: 2, size: this.size, rounded: this.rounded }, v)));
+      return this.loadedData.slice((this.pageNum - 1) * limit, this.pageNum * limit).map((v, i) => (h("mod-card", { key: `${v}-${i}`, theme: this.theme, elevation: 2, size: this.size, rounded: this.rounded }, h("h2", { slot: "title" }, (v.name) ? v.name : (v.title) ? v.title : ""), (v.price)
+        ?
+          h("h4", { slot: "price" }, v.price)
+        :
+          h("div", null))));
     }
     else {
-      return this.loadedData.map((v, i) => (h("mod-card", { key: `${v}-${i}`, theme: this.theme, elevation: 2, size: this.size, rounded: this.rounded }, v)));
+      return this.loadedData.map((v, i) => (h("mod-card", { key: `${v}-${i}`, theme: this.theme, elevation: 2, size: this.size, rounded: this.rounded }, h("h2", { slot: "title" }, (v.name) ? v.name : (v.title) ? v.title : ""), (v.price)
+        ?
+          h("h4", { slot: "price" }, v.price)
+        :
+          h("div", null))));
     }
   }
   togglePage(key) {
@@ -56,10 +70,10 @@ const Panel = class {
     }
   }
   render() {
-    return (h("div", { class: {
+    return (h("div", null, h("div", { class: {
         panel: true,
         [`${this.classes}`]: (this.classes !== null || this.classes !== undefined)
-      } }, this.makePagination(this.paginate, this.limit), (this.paginate)
+      } }, this.makePagination(this.paginate, this.limit)), (this.paginate)
       ?
         h("div", null, h("button", { class: "prev prev-button", onClick: () => this.togglePage('prev') }, "Prev"), h("button", { class: "next next-button", onClick: () => this.togglePage('forw') }, "Next"))
       :
